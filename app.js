@@ -37,7 +37,7 @@ function facebookGetUser() {
   return function(req, res, next) {
     req.facebook.getUser( function(err, user) {
       if (!user || err){
-        res.redirect('/login');
+        res.redirect('/');
       } else {
         req.user = user;
         next();
@@ -46,8 +46,8 @@ function facebookGetUser() {
   }
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/', Facebook.loginRequired({ scope: ['read_stream', 'publish_stream']}), routes.index);
+//app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
