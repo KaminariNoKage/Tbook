@@ -4,9 +4,9 @@
  */
 
 exports.index = function(req, res){
-	req.facebook.api('/me/feed', function(err, data) {
-		var feed = data;
-		res.send(feed);
+	req.facebook.api('/me/home', function(err, data) {
+		var ext = data.data;
+		res.send(ext);
 		//res.render('index', { title: 'Express' });
 	});
 };
