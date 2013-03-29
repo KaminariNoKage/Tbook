@@ -163,7 +163,7 @@ exports.index = function(req, res){
 							tweetList.push({title: makeTweet(docs[i]), url: docs[i].id});
 						};
 					};
-					res.send(tweetList);
+					res.render('index', {title: 'Tbook', name: user.name, feed: tweetList});
 				});
 			});
 		});
