@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome #{name} to your Tbook feed
+  h1= Welcome #{name} to your Tbook feed!
 
   div(value=feed)  
     each tweet, i in feed
