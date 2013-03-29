@@ -16,5 +16,7 @@ var postSchema = mongoose.Schema({
 	link: String
 });
 
+var tweetSchema = mongoose.Schema({})
+
 var Post = mongoose.model('User', postSchema);
 module.exports = Post;

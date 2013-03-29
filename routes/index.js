@@ -160,7 +160,7 @@ exports.index = function(req, res){
 					var tweetList = [];
 					for (var i=0; i<docs.length; i++){
 						if (docs[i].message != null){
-							tweetList.push(makeTweet(docs[i]));
+							tweetList.push({name: makeTweet(docs[i]), url: docs[i].id});
 						};
 					};
 					res.send(tweetList);
