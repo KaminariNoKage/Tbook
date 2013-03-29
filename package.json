@@ -10,7 +10,8 @@
     "jade": "*",
     "fb": "0.1.0",
     "mongoose": "3.x",
-    "facebook-node-sdk": "~0.2.0"
+    "facebook-node-sdk": "~0.2.0",
+    "async": "0.2.x"
   },
   "engines": {
     "node": "0.8.14",
