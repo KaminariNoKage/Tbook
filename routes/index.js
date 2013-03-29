@@ -126,9 +126,6 @@ var makeTweet = function makeTweet(postx){
 exports.index = function(req, res){
 	req.facebook.api('/me', function(err, user) {
 
-		setTimeout("location.reloader(true)", 60000);
-		console.log("Loading");
-
 		var makePost = function makePost(pdata, callback){
 			if (pdata.story == null){
 				Post.find({fb_id: pdata.id}).sort().exec(function(err, docs){
