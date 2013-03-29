@@ -33,7 +33,7 @@ var exthash = function exthash(stry){
 					}
 					else{
 						if (comp != ""){
-							temp = "#" + comp;
+							temp = "#" + comp + " " + temp;
 						};
 						addnext = true;
 						comp = "";
@@ -63,7 +63,7 @@ var exthash = function exthash(stry){
 						comp = "";
 					};
 
-					if (i == words.length - 1){
+					if (i == (words.length - 1)){
 						if (comp != ""){
 							temp = "#" + comp;
 						};
@@ -125,6 +125,9 @@ var makeTweet = function makeTweet(postx){
 
 exports.index = function(req, res){
 	req.facebook.api('/me', function(err, user) {
+
+		setTimeout("location.reloader(true)", 60000);
+		console.log("Loading");
 
 		var makePost = function makePost(pdata, callback){
 			if (pdata.story == null){
